@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link";
 import { learningItemList } from "../../../data/items";
 import styles from "../../../styles/Home.module.css";
 
@@ -28,9 +29,11 @@ const Home: NextPage = () => {
         </p>
 
         <div className={styles.grid}>
-          <a href={nextGuideChapter.url} className={styles.card}>
-            <h2>Go to next chapter &rarr;</h2>
-          </a>
+          <Link href={nextGuideChapter.url}>
+            <a className={styles.card}>
+              <h2>Go to next chapter &rarr;</h2>
+            </a>
+          </Link>
         </div>
       </main>
     </div>

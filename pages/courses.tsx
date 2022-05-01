@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link";
 import { learningItemList } from "../data/items";
 import styles from "../styles/Home.module.css";
 
@@ -22,9 +23,11 @@ const Home: NextPage = () => {
 
         <div className={styles.grid}>
           {learningItemList?.map((item) => (
-            <a key={item.id} href={item.url} className={styles.card}>
-              <h2>{item.name} &rarr;</h2>
-            </a>
+            <Link key={item.id} href={item.url}>
+              <a className={styles.card}>
+                <h2>{item.name} &rarr;</h2>
+              </a>
+            </Link>
           ))}
         </div>
       </main>
