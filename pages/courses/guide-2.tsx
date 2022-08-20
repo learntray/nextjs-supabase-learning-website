@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
+import Footer from "../../components/Footer";
 import { learningItemList } from "../../data/items";
 import styles from "../../styles/Home.module.css";
 
@@ -34,6 +35,8 @@ const Home: NextPage = () => {
           ))}
         </div>
       </main>
+
+      <Footer />
     </div>
   );
 };
