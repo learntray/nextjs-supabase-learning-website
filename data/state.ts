@@ -1,6 +1,5 @@
 import { LearningItemState } from "../types";
 import { prismaClient } from "./database";
-import { setUserLearningKey } from "./localStorage";
 import { mapDatabaseStateToApiState } from "./mapping";
 
 // This is the state which you can fetch from the database for currently authorised user.
