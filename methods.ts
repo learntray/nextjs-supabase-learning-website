@@ -9,6 +9,7 @@ export const completeLearningStepState = async (
   const result = await fetch(`/websiteapi/set-state`, {
     method: "POST",
     headers: {
+      "Content-Type": "application/json",
       authorization: `Bearer ${getUserLearningKey()}`,
     },
     body: JSON.stringify({
@@ -27,6 +28,7 @@ export const getLearningState = async () => {
   const result = await fetch(`/websiteapi/get-state`, {
     method: "GET",
     headers: {
+      "Content-Type": "application/json",
       authorization: `Bearer ${getUserLearningKey()}`,
     },
   });
