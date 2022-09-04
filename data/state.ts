@@ -66,25 +66,26 @@ export const setLearningState = async (
 
       // setUserLearningKey(user.learningKey);
     }
-    await prismaClient.learningItemStepState.upsert({
-      where: {
-        userId_resourceId_resourceStepId: {
-          resourceId: itemId,
-          resourceStepId: itemStepId,
-          userId: user.id,
-        },
-      },
-      create: {
-        done: value,
+  }
+
+  await prismaClient.learningItemStepState.upsert({
+    where: {
+      userId_resourceId_resourceStepId: {
         resourceId: itemId,
         resourceStepId: itemStepId,
         userId: user.id,
       },
-      update: {
-        done: value,
-      },
-    });
-  }
+    },
+    create: {
+      done: value,
+      resourceId: itemId,
+      resourceStepId: itemStepId,
+      userId: user.id,
+    },
+    update: {
+      done: value,
+    },
+  });
 
   return user.learningKey;
 };

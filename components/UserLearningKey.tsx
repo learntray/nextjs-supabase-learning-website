@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getUserLearningKey } from "../data/localStorage";
 import styles from "../styles/Home.module.css";
+import useLearningContext from "./LearningContext";
 
 const getLastFourCharsUserLearningId = (userLearningId?: string | null) => {
   if (!userLearningId) {
@@ -19,12 +20,18 @@ const getLastFourCharsUserLearningId = (userLearningId?: string | null) => {
 };
 
 const UserLearningKey: React.FC = () => {
+  const { learningState } = useLearningContext();
+
   const [userLearningId, setUserLearningId] = useState<string | null>();
   const [showUserLearningId, setShowUserLearningId] = useState(false);
 
   useEffect(() => {
     setUserLearningId(getUserLearningKey());
   }, []);
+
+  useEffect(() => {
+    setUserLearningId(getUserLearningKey());
+  }, [learningState]);
 
   const shownUserLearningId = showUserLearningId
     ? userLearningId
