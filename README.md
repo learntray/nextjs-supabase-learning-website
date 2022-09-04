@@ -8,7 +8,7 @@ Go to [learn-api-example.vercel.app](https://learn-api-example.vercel.app) to se
 
 - On [/courses](https://learn-api-example.vercel.app/courses) you can see all available courses within the website.
 - On [/learnapi/items](https://learn-api-example.vercel.app/learnapi/items) you can see all data about available courses within the website, prepared according to [Learn API](https://github.com/orzechdev/learn-api).
-- On [/learnapi/state](https://learn-api-example.vercel.app/learnapi/items) you can see progress state within particular courses for given user - you need to add uniqely generated user learning key to request headers as `Authorization: Bearer <learning-key>`, according to [Learn API](https://github.com/orzechdev/learn-api).
+- On [/learnapi/state](https://learn-api-example.vercel.app/learnapi/state) you can see progress state within particular courses for given user - you need to add uniqely generated user learning key to request headers as `Authorization: Bearer <learning-key>`, according to [Learn API](https://github.com/orzechdev/learn-api).
 
 ## Getting Started
 
