@@ -27,7 +27,16 @@ export default async function handler(
 
   console.log("4");
 
-  const learningState = await getLearningState(userLearningKey);
+  let learningState;
+  try {
+    learningState = await getLearningState(userLearningKey);
+  } catch (e) {
+    console.log("4", e);
+    res.status(500).send({
+      message: "Failed to return learning state due to an internal error",
+    });
+    return;
+  }
 
   console.log("5");
 

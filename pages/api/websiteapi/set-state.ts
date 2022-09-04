@@ -14,12 +14,20 @@ export default async function handler(
 
   const body = JSON.parse(req.body);
 
-  userLearningKey = await setLearningState(
-    userLearningKey,
-    body.itemId,
-    body.itemStepId,
-    body.value
-  );
+  try {
+    userLearningKey = await setLearningState(
+      userLearningKey,
+      body.itemId,
+      body.itemStepId,
+      body.value
+    );
+  } catch (e) {
+    console.log("error", e);
+    res.status(500).send({
+      message: "Failed to alter learning state due to an internal error",
+    });
+    return;
+  }
 
   res.status(200).json({
     success: true,
