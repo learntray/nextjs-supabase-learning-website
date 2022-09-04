@@ -7,18 +7,21 @@ export const completeLearningStepState = async (
   guideChapterId: string,
   done: boolean
 ) => {
-  const result = await fetch(`${envVars.appUrl}/websiteapi/set-state`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      authorization: `Bearer ${getUserLearningKey()}`,
-    },
-    body: JSON.stringify({
-      itemId: guideId,
-      itemStepId: guideChapterId,
-      value: done,
-    }),
-  });
+  const result = await fetch(
+    `https://${envVars.appUrl}/api/websiteapi/set-state`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${getUserLearningKey()}`,
+      },
+      body: JSON.stringify({
+        itemId: guideId,
+        itemStepId: guideChapterId,
+        value: done,
+      }),
+    }
+  );
 
   const data = await result.json();
 
@@ -26,7 +29,7 @@ export const completeLearningStepState = async (
 };
 
 export const getLearningState = async () => {
-  const result = await fetch(`${envVars.appUrl}/websiteapi/get-state`, {
+  const result = await fetch(`/api/websiteapi/get-state`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
