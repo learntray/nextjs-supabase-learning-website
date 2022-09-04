@@ -65,7 +65,7 @@ export const setLearningState = async (
         data: {},
       });
 
-      setUserLearningKey(user.learningKey);
+      // setUserLearningKey(user.learningKey);
     }
     await prismaClient.learningItemStepState.upsert({
       where: {

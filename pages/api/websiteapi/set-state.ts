@@ -25,4 +25,5 @@ export default async function handler(
     success: true,
     userLearningKey,
   });
+  return;
 }
