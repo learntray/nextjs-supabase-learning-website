@@ -1,13 +1,12 @@
 import { getUserLearningKey, setUserLearningKey } from "./data/localStorage";
 import { LearningItemState } from "./types";
-import { envVars } from "./utils";
 
 export const completeLearningStepState = async (
   guideId: string,
   guideChapterId: string,
   done: boolean
 ) => {
-  const result = await fetch(`https://${envVars.appUrl}/websiteapi/set-state`, {
+  const result = await fetch(`/websiteapi/set-state`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
