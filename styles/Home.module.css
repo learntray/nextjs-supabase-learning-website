@@ -33,9 +33,24 @@
 .userLearningKey {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.5rem;
+}
+.userLearningKey pre {
+  margin: 0;
+  background: #fafafa;
+  border-radius: 5px;
+  border: 1px solid #eaeaea;
+  padding: 0.5rem;
+  display: inline;
+}
+.userLearningKey button {
+  height: 2rem;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  background: #ffffff;
 }
 
 .title a {
@@ -68,6 +83,7 @@
 
 .code {
   background: #fafafa;
+  border: 1px solid #eaeaea;
   border-radius: 5px;
   padding: 0.75rem;
   font-size: 1.1rem;
@@ -89,10 +105,20 @@
   text-align: left;
   color: inherit;
   text-decoration: none;
-  border: 1px solid #eaeaea;
+  border: 2px solid #000000;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
   max-width: 300px;
+  background: none;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.cardCompleted {
+  border: 1px solid #eaeaea;
+  background: #fafafa;
 }
 
 .card:hover,

@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { LearnApiItems } from "../../../types";
 import { learningItemList } from "../../../data/items";
+import { LearnApiItems } from "../../../types";
 
 export default function handler(
   req: NextApiRequest,

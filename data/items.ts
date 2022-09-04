@@ -2,7 +2,7 @@ import { LearningItem } from "../types";
 
 export const learningItemList: LearningItem[] = [
   {
-    id: "first.courses.learning.localhost",
+    id: "guide-1",
     name: "Example Guide 1",
     url: "/courses/guide-1",
     description: "Example Guide 1",
@@ -26,7 +26,7 @@ export const learningItemList: LearningItem[] = [
     ],
   },
   {
-    id: "second.courses.learning.localhost",
+    id: "guide-2",
     name: "Example Guide 2",
     url: "/courses/guide-2",
     description: "Example Guide 2",

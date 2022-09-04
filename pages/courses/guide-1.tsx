@@ -1,13 +1,19 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Link from "next/link";
 import Footer from "../../components/Footer";
+import { ItemStepCard } from "../../components/ItemStepCard";
 import { learningItemList } from "../../data/items";
+import { useLearningItemCompleteness } from "../../hooks/useLearningItemCompleteness";
+import { useLearningItemState } from "../../hooks/useLearningItemState";
 import styles from "../../styles/Home.module.css";
 
 const Home: NextPage = () => {
   const guide = learningItemList[0];
   const guideChapter = guide.steps;
+
+  const learningState = useLearningItemState(guide.id);
+  const [completedStepsCount, allStepsCount] =
+    useLearningItemCompleteness(learningState);
 
   return (
     <div className={styles.container}>
@@ -20,6 +26,10 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <h1 className={styles.title}>{guide.name}</h1>
 
+        <h2>
+          Completed {completedStepsCount}/{allStepsCount}
+        </h2>
+
         <p className={styles.description}>
           Get started by editing{" "}
           <code className={styles.code}>{`pages${guide.url}.tsx`}</code>
@@ -27,11 +37,7 @@ const Home: NextPage = () => {
 
         <div className={styles.grid}>
           {guideChapter?.map((chapter) => (
-            <Link key={chapter.id} href={chapter.url}>
-              <a className={styles.card}>
-                <h2>{chapter.name} &rarr;</h2>
-              </a>
-            </Link>
+            <ItemStepCard key={chapter.id} item={guide} itemStep={chapter} />
           ))}
         </div>
       </main>

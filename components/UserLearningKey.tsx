@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getUserLearningId } from "../data/localStorage";
+import { getUserLearningKey } from "../data/localStorage";
 import styles from "../styles/Home.module.css";
 
 const getLastFourCharsUserLearningId = (userLearningId?: string | null) => {
@@ -12,10 +12,10 @@ const getLastFourCharsUserLearningId = (userLearningId?: string | null) => {
       userLearningId.length - 4,
       userLearningId.length
     );
-    return `•••• •••• •••• ${lastFourChars}`;
+    return `••••••••••••••••••••••••••••${lastFourChars}`;
   }
 
-  return "•••• •••• ••••";
+  return "••••••••••••••••••••••••••••••••";
 };
 
 const UserLearningKey: React.FC = () => {
@@ -23,7 +23,7 @@ const UserLearningKey: React.FC = () => {
   const [showUserLearningId, setShowUserLearningId] = useState(false);
 
   useEffect(() => {
-    setUserLearningId(getUserLearningId());
+    setUserLearningId(getUserLearningKey());
   }, []);
 
   const shownUserLearningId = showUserLearningId
@@ -36,7 +36,10 @@ const UserLearningKey: React.FC = () => {
 
   return (
     <div className={styles.userLearningKey}>
-      <span>User learning key: {shownUserLearningId}</span>
+      <span>User learning key: </span>
+      <pre>
+        <code>{shownUserLearningId}</code>
+      </pre>
       <button onClick={() => setShowUserLearningId(!showUserLearningId)}>
         {showUserLearningId ? "Hide" : "Show"}
       </button>
