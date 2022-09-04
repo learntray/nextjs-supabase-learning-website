@@ -1,6 +1,15 @@
 import { getUserLearningKey, setUserLearningKey } from "./data/localStorage";
 import { LearningItemState } from "./types";
 
+const getAuthHeaders = () => {
+  const userLearningKey = getUserLearningKey();
+  const authHeaders: HeadersInit = userLearningKey
+    ? { authorization: `Bearer ${userLearningKey}` }
+    : {};
+
+  return authHeaders;
+};
+
 export const completeLearningStepState = async (
   guideId: string,
   guideChapterId: string,
@@ -10,7 +19,7 @@ export const completeLearningStepState = async (
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      authorization: `Bearer ${getUserLearningKey()}`,
+      ...getAuthHeaders(),
     },
     body: JSON.stringify({
       itemId: guideId,
@@ -29,7 +38,7 @@ export const getLearningState = async () => {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      authorization: `Bearer ${getUserLearningKey()}`,
+      ...getAuthHeaders(),
     },
   });
 

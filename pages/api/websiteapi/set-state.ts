@@ -10,7 +10,12 @@ export default async function handler(
     return;
   }
 
-  let userLearningKey = req.headers.authorization?.split(" ")[1] || null;
+  const authHeaderStrings = req.headers.authorization?.split(" ");
+  let userLearningKey =
+    (authHeaderStrings &&
+      authHeaderStrings.length > 1 &&
+      authHeaderStrings[1]) ||
+    null;
 
   const body = JSON.parse(req.body);
 

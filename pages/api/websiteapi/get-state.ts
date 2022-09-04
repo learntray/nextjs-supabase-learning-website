@@ -14,7 +14,12 @@ export default async function handler(
 
   console.log("2");
 
-  let userLearningKey = req.headers.authorization?.split(" ")[1] || null;
+  const authHeaderStrings = req.headers.authorization?.split(" ");
+  let userLearningKey =
+    (authHeaderStrings &&
+      authHeaderStrings.length > 1 &&
+      authHeaderStrings[1]) ||
+    null;
 
   console.log("2", userLearningKey);
 
