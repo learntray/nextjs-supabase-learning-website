@@ -8,10 +8,15 @@ Go to [learn-api-example.vercel.app](https://learn-api-example.vercel.app) to se
 
 - On [/courses](https://learn-api-example.vercel.app/courses) you can see all available courses within the website.
 - On [/learnapi/items](https://learn-api-example.vercel.app/learnapi/items) you can see all data about available courses within the website, prepared according to [Learn API](https://github.com/orzechdev/learn-api).
+- On [/learnapi/state](https://learn-api-example.vercel.app/learnapi/items) you can see progress state within particular courses for given user - you need to add uniqely generated user learning key to request headers as `Authorization: Bearer <learning-key>`, according to [Learn API](https://github.com/orzechdev/learn-api).
 
 ## Getting Started
 
-First, run the development server:
+The project is using [Supabase](https://supabase.com) to persist user learning state within PostgreSQL, via [Prisma.js](https://github.com/prisma/prisma), so make sure you have setup project to connect with before continuing. Prisma.js also works with other servers so you can also connect to any other database [accordingly](https://www.prisma.io/docs/).
+
+Setup environment variables in `.env` file, according to `.env.template`. If you use Vercel for deployment, then add variables in Vercel dashboard accordingly.
+
+Run the development server:
 
 ```bash
 npm run dev
