@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
-import { getUserLearningKey } from "../data/localStorage";
+import { debounce } from "lodash-es";
+import React, { useCallback, useEffect, useState } from "react";
+import { getUserLearningKey, setUserLearningKey } from "../data/localStorage";
 import styles from "../styles/Home.module.css";
 import useLearningContext from "./LearningContext";
 
@@ -25,6 +26,11 @@ const UserLearningKey: React.FC = () => {
   const [userLearningId, setUserLearningId] = useState<string | null>();
   const [showUserLearningId, setShowUserLearningId] = useState(false);
 
+  const delayedSetUserLearningKey = debounce(
+    (insertedUserLearningId) => setUserLearningKey(insertedUserLearningId),
+    1000
+  );
+
   useEffect(() => {
     setUserLearningId(getUserLearningKey());
   }, []);
@@ -33,12 +39,42 @@ const UserLearningKey: React.FC = () => {
     setUserLearningId(getUserLearningKey());
   }, [learningState]);
 
+  const onUserLearningIdChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const changedUserLearningId = event.target.value;
+
+    setUserLearningId(changedUserLearningId);
+    delayedSetUserLearningKey(changedUserLearningId);
+  };
+
   const shownUserLearningId = showUserLearningId
     ? userLearningId
     : getLastFourCharsUserLearningId(userLearningId);
 
-  if (!userLearningId) {
-    return null;
+  if (!userLearningId && !showUserLearningId) {
+    return (
+      <div className={styles.userLearningKey}>
+        <button onClick={() => setShowUserLearningId(true)}>
+          Assign user learning key
+        </button>
+      </div>
+    );
+  }
+
+  if (showUserLearningId) {
+    return (
+      <div className={styles.userLearningKey}>
+        <span>User learning key: </span>
+        <input
+          type="text"
+          autoFocus={true}
+          value={shownUserLearningId || ""}
+          onChange={onUserLearningIdChange}
+        />
+        <button onClick={() => setShowUserLearningId(false)}>Hide</button>
+      </div>
+    );
   }
 
   return (
@@ -47,9 +83,7 @@ const UserLearningKey: React.FC = () => {
       <pre>
         <code>{shownUserLearningId}</code>
       </pre>
-      <button onClick={() => setShowUserLearningId(!showUserLearningId)}>
-        {showUserLearningId ? "Hide" : "Show"}
-      </button>
+      <button onClick={() => setShowUserLearningId(true)}>Show</button>
     </div>
   );
 };

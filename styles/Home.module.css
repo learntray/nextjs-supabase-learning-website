@@ -38,13 +38,16 @@
   justify-content: center;
   gap: 0.5rem;
 }
-.userLearningKey pre {
+.userLearningKey pre,
+.userLearningKey input {
   margin: 0;
   background: #fafafa;
   border-radius: 5px;
   border: 1px solid #eaeaea;
   padding: 0.5rem;
   display: inline;
+  width: 100%;
+  max-width: 18rem;
 }
 .userLearningKey button {
   height: 2rem;
