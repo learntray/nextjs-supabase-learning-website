@@ -1,8 +1,10 @@
-# Next.js Learning Website with Learn API
+<h1 align="center">Next.js Learning Website with Learn API</h1>
 
 This is a [Next.js](https://nextjs.org/) project template for learning websites with example implementation of [Learn API](https://github.com/orzechdev/learn-api). You can clone this repository to build learning website with it.
 
 ![Project preview](readme-image-1.png)
+
+## Project description
 
 Go to [learning-website.vercel.app](https://learning-website.vercel.app) to see example deployment:
 
