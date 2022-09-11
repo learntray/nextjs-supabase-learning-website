@@ -1,14 +1,14 @@
-# Learn API - Next.js Example
+# Next.js Learning Website with Learn API
 
 This is a [Next.js](https://nextjs.org/) project template for learning websites with example implementation of [Learn API](https://github.com/orzechdev/learn-api). You can clone this repository to build learning website with it.
 
 ![Project preview](readme-image-1.png)
 
-Go to [learn-api-example.vercel.app](https://learn-api-example.vercel.app) to see example deployment:
+Go to [learning-website.vercel.app](https://learning-website.vercel.app) to see example deployment:
 
-- On [/courses](https://learn-api-example.vercel.app/courses) you can see all available courses within the website.
-- On [/learnapi/items](https://learn-api-example.vercel.app/learnapi/items) you can see all data about available courses within the website, prepared according to [Learn API](https://github.com/orzechdev/learn-api).
-- On [/learnapi/state](https://learn-api-example.vercel.app/learnapi/state) you can see progress state within particular courses for given user - you need to add uniqely generated user learning key to request headers as `Authorization: Bearer <learning-key>`, according to [Learn API](https://github.com/orzechdev/learn-api).
+- On [/courses](https://learning-website.vercel.app/courses) you can see all available courses within the website.
+- On [/learnapi/items](https://learning-website.vercel.app/learnapi/items) you can see all data about available courses within the website, prepared according to [Learn API](https://github.com/orzechdev/learn-api).
+- On [/learnapi/state](https://learning-website.vercel.app/learnapi/state) you can see progress state within particular courses for given user - you need to add uniqely generated user learning key to request headers as `Authorization: Bearer <learning-key>`, according to [Learn API](https://github.com/orzechdev/learn-api).
 
 ## Getting Started
 
