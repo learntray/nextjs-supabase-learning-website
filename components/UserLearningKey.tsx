@@ -21,14 +21,17 @@ const getLastFourCharsUserLearningId = (userLearningId?: string | null) => {
 };
 
 const UserLearningKey: React.FC = () => {
-  const { learningState } = useLearningContext();
+  const { learningState, refetchLearningState } = useLearningContext();
 
   const [userLearningId, setUserLearningId] = useState<string | null>();
   const [showUserLearningId, setShowUserLearningId] = useState(false);
 
-  const delayedSetUserLearningKey = debounce(
-    (insertedUserLearningId) => setUserLearningKey(insertedUserLearningId),
-    1000
+  const delayedSetUserLearningKey = useCallback(
+    debounce((insertedUserLearningId) => {
+      setUserLearningKey(insertedUserLearningId);
+      refetchLearningState();
+    }, 1000),
+    []
   );
 
   useEffect(() => {
