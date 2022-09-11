@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { useLearningItemState } from "../hooks/useLearningItemState";
-import { LearningItem } from "../types";
-import styles from "../styles/Home.module.css";
-import { useLearningItemCompleteness } from "../hooks/useLearningItemCompleteness";
+import { useLearningItemState } from "@/hooks/useLearningItemState";
+import { LearningItem } from "@/types";
+import styles from "@/styles/Home.module.css";
+import { useLearningItemCompleteness } from "@/hooks/useLearningItemCompleteness";
 
 interface ItemCardProps {
   item: LearningItem;

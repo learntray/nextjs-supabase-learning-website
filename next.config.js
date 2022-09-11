@@ -1,3 +1,5 @@
+const path = require("path");
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -6,6 +8,11 @@ const nextConfig = {
       { source: "/learnapi/:path*", destination: "/api/learnapi/:path*" },
       { source: "/websiteapi/:path*", destination: "/api/websiteapi/:path*" },
     ];
+  },
+  webpack(config) {
+    config.resolve.alias["@"] = path.resolve(__dirname, "./");
+
+    return config;
   },
 };
 

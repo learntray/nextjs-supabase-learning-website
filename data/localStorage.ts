@@ -1,4 +1,4 @@
-import { isSsr } from "../utils";
+import { isSsr } from "@/utils";
 
 export const getUserLearningKey = () => {
   return isSsr ? null : localStorage.getItem("userLearningKey");

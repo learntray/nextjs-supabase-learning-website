@@ -1,4 +1,4 @@
-import { LearningItemState } from "../types";
+import { LearningItemState } from "@/types";
 
 export const useLearningItemCompleteness = (
   learningItemState?: LearningItemState

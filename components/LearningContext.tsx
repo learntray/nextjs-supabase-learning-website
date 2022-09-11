@@ -1,7 +1,7 @@
 import React, { useContext, createContext, useEffect, useState } from "react";
-import { getLearningState } from "../methods";
-import { LearningItemState } from "../types";
-import { isSsr } from "../utils";
+import { getLearningState } from "@/methods";
+import { LearningItemState } from "@/types";
+import { isSsr } from "@/utils";
 
 export interface LearningContextType {
   learningState: LearningItemState[];

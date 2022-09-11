@@ -1,5 +1,5 @@
-import styles from "../styles/Home.module.css";
-import { completeLearningStepState } from "../methods";
+import styles from "@/styles/Home.module.css";
+import { completeLearningStepState } from "@/methods";
 import useLearningContext from "./LearningContext";
 
 interface MarkAsDoneProps {

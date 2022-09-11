@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { setLearningState } from "../../../data/state";
+import { setLearningState } from "@/data/state";
 
 export default async function handler(
   req: NextApiRequest,

@@ -1,5 +1,5 @@
 import UserLearningKey from "./UserLearningKey";
-import styles from "../styles/Home.module.css";
+import styles from "@/styles/Home.module.css";
 import Image from "next/image";
 
 const Footer: React.FC = () => {

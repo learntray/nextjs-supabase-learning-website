@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { getEveryLearningState, getLearningState } from "../../../data/state";
-import { LearnApiState } from "../../../types";
+import { getEveryLearningState, getLearningState } from "@/data/state";
+import { LearnApiState } from "@/types";
 
 // You should return only learning state for authorised user based on the token obtained in Authorization HTTP header.
 

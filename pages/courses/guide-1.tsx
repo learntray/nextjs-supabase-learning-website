@@ -1,11 +1,11 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Footer from "../../components/Footer";
-import { ItemStepCard } from "../../components/ItemStepCard";
-import { learningItemList } from "../../data/items";
-import { useLearningItemCompleteness } from "../../hooks/useLearningItemCompleteness";
-import { useLearningItemState } from "../../hooks/useLearningItemState";
-import styles from "../../styles/Home.module.css";
+import Footer from "@/components/Footer";
+import { ItemStepCard } from "@/components/ItemStepCard";
+import { learningItemList } from "@/data/items";
+import { useLearningItemCompleteness } from "@/hooks/useLearningItemCompleteness";
+import { useLearningItemState } from "@/hooks/useLearningItemState";
+import styles from "@/styles/Home.module.css";
 
 const Home: NextPage = () => {
   const guide = learningItemList[0];

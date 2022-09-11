@@ -1,4 +1,4 @@
-import { LearningItem } from "../types";
+import { LearningItem } from "@/types";
 
 export const learningItemList: LearningItem[] = [
   {

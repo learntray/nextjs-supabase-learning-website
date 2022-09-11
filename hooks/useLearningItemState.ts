@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import useLearningContext from "../components/LearningContext";
+import useLearningContext from "@/components/LearningContext";
 
 export const useLearningItemState = (itemId: string) => {
   const { learningState, getLearningItemState } = useLearningContext();

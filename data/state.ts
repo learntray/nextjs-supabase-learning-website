@@ -1,4 +1,4 @@
-import { LearningItemState } from "../types";
+import { LearningItemState } from "@/types";
 import { prismaClient } from "./database";
 import { mapDatabaseStateToApiState } from "./mapping";
 

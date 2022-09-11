@@ -1,7 +1,7 @@
 import { debounce } from "lodash-es";
 import React, { useCallback, useEffect, useState } from "react";
-import { getUserLearningKey, setUserLearningKey } from "../data/localStorage";
-import styles from "../styles/Home.module.css";
+import { getUserLearningKey, setUserLearningKey } from "@/data/localStorage";
+import styles from "@/styles/Home.module.css";
 import useLearningContext from "./LearningContext";
 
 const getLastFourCharsUserLearningId = (userLearningId?: string | null) => {

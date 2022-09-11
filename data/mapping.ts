@@ -1,5 +1,5 @@
 import { LearningItemStepState } from "@prisma/client";
-import { LearningItemState } from "../types";
+import { LearningItemState } from "@/types";
 import { learningItemList } from "./items";
 
 export const mapDatabaseStateToApiState = (
