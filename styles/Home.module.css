@@ -56,6 +56,15 @@
   border-radius: 5px;
   background: #ffffff;
 }
+.userLearningKey button:hover {
+  cursor: pointer;
+}
+.userLearningKey button:hover,
+.userLearningKey button:focus,
+.userLearningKey button:active {
+  color: #0070f3;
+  border-color: #0070f3;
+}
 
 .title a {
   color: #0070f3;
