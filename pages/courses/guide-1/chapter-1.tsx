@@ -7,18 +7,25 @@ import { learningItemList } from "@/data/items";
 import { useLearningItemState } from "@/hooks/useLearningItemState";
 import { useLearningItemStepCompleteness } from "@/hooks/useLearningItemStepCompleteness";
 import styles from "@/styles/Home.module.css";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+
+const guide = learningItemList[0];
+const guideChapter = guide.steps![0];
+
+const nextGuideChapter = guide.steps![1];
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Courses", url: "/courses" },
+  { name: guide.name, url: guide.url },
+];
 
 const Home: NextPage = () => {
-  const guide = learningItemList[0];
-  const guideChapter = guide.steps![0];
-
   const learningState = useLearningItemState(guide.id);
   const isCompleted = useLearningItemStepCompleteness(
     learningState,
     guideChapter.id
   );
-
-  const nextGuideChapter = guide.steps![1];
 
   return (
     <div className={styles.container}>
@@ -29,11 +36,11 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>{guide.name}</h1>
+        <Breadcrumbs breadcrumbs={breadcrumbs} />
+
+        <h1 className={styles.title}>{guideChapter.name}</h1>
 
         <h2>{isCompleted ? "Completed" : "Incompleted"}</h2>
-
-        <p className={styles.description}>Welcome to {guideChapter.name}!</p>
 
         <p className={styles.description}>
           Get started by editing{" "}

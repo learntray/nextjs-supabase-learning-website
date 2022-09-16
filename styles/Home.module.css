@@ -66,6 +66,15 @@
   border-color: #0070f3;
 }
 
+.breadcrumbs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  gap: 0.2rem;
+}
+
 .title a {
   color: #0070f3;
   text-decoration: none;

@@ -4,6 +4,9 @@ import Footer from "@/components/Footer";
 import { ItemCard } from "@/components/ItemCard";
 import { learningItemList } from "@/data/items";
 import styles from "@/styles/Home.module.css";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+
+const breadcrumbs = [{ name: "Home", url: "/" }];
 
 const Home: NextPage = () => {
   return (
@@ -15,6 +18,8 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
+        <Breadcrumbs breadcrumbs={breadcrumbs} />
+
         <h1 className={styles.title}>Courses</h1>
 
         <p className={styles.description}>

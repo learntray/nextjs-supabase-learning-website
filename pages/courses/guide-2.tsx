@@ -6,11 +6,17 @@ import { learningItemList } from "@/data/items";
 import { useLearningItemCompleteness } from "@/hooks/useLearningItemCompleteness";
 import { useLearningItemState } from "@/hooks/useLearningItemState";
 import styles from "@/styles/Home.module.css";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+
+const guide = learningItemList[1];
+const guideChapter = guide.steps;
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Courses", url: "/courses" },
+];
 
 const Home: NextPage = () => {
-  const guide = learningItemList[1];
-  const guideChapter = guide.steps;
-
   const learningState = useLearningItemState(guide.id);
   const [completedStepsCount, allStepsCount] =
     useLearningItemCompleteness(learningState);
@@ -24,6 +30,8 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
+        <Breadcrumbs breadcrumbs={breadcrumbs} />
+
         <h1 className={styles.title}>{guide.name}</h1>
 
         <h2>
