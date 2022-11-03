@@ -3,7 +3,7 @@
 This is a template from which you can start create learning website. It is built with:
 - [Next.js](https://nextjs.org/) - framework to create websites,
 - [Supabase](https://supabase.com) - service to store user data and manage user-related features,
-- [Learn API](https://github.com/learntray/learn-api) - (experimental) API to allow fetching user learning state and manage user participation in courses.
+- [Learn API](https://github.com/learntray/learn-api) - (experimental) API to fetch user learning state and manage user participation in courses by external service.
 
 ![Project preview](readme-image-1.png)
 
