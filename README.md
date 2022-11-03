@@ -1,6 +1,9 @@
-<h1 align="center">Next.js Learning Website with Learn API</h1>
+<h1 align="center">Learning Website Template with Next.js and Supabase</h1>
 
-This is a [Next.js](https://nextjs.org/) project template for learning websites with example implementation of [Learn API](https://github.com/orzechdev/learn-api). You can clone this repository to build learning website with it.
+This is a template from which you can start create learning website. It is built with:
+- [Next.js](https://nextjs.org/) - framework to create websites,
+- [Supabase](https://supabase.com) - service to store user data and manage user-related features,
+- [Learn API](https://github.com/orzechdev/learn-api) - (experimental) API to allow fetching user learning state and manage user participation in courses.
 
 ![Project preview](readme-image-1.png)
 
@@ -8,9 +11,8 @@ This is a [Next.js](https://nextjs.org/) project template for learning websites 
 
 Go to [learning-website.vercel.app](https://learning-website.vercel.app) to see example deployment:
 
-- On [/courses](https://learning-website.vercel.app/courses) you can see all available courses within the website.
-- On [/learnapi/items](https://learning-website.vercel.app/learnapi/items) you can see all data about available courses within the website, prepared according to [Learn API](https://github.com/orzechdev/learn-api).
-- On [/learnapi/state](https://learning-website.vercel.app/learnapi/state) you can see progress state within particular courses for given user - you need to add uniqely generated user learning key to request headers as `Authorization: Bearer <learning-key>`, according to [Learn API](https://github.com/orzechdev/learn-api).
+- on [/courses](https://learning-website.vercel.app/courses) you can see all available courses within the website,
+- on [/learnapi/items](https://learning-website.vercel.app/learnapi/items) and [/learnapi/state](https://learning-website.vercel.app/learnapi/state) you can see all data about available courses within the website and users learning state accordingly, prepared according to [Learn API](https://github.com/orzechdev/learn-api).
 
 ## Getting Started
 
@@ -44,10 +46,10 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the courses by modifying `pages/*` and `data/items.ts` accordingly. The pages auto-updates as you edit pages files. The endpoint `http://localhost:3000/learnapi/items` auto-updates as you edit data files.
+You can start editing the courses by modifying `pages/*` and `data/items.ts` accordingly. The pages auto-updates as you edit pages files. The endpoints  `http://localhost:3000/websiteapi/*` and `http://localhost:3000/learnapi/*` auto-updates as you edit data files.
 
-To learn more of how to develop the website you can check out [Next.js tutorial](https://nextjs.org/learn).
+To learn more of how to develop the website you can check out [Next.js tutorial](https://nextjs.org/learn) and [Supabase guides](https://supabase.com/docs).
 
 ### 4. Deployment
 
-To preview the project on the web you can use Vercel by creating an project on [Vercel website](https://vercel.com/). After creating the project you will also need to add previously setup environment variables from `.env` also in Vercel dashboard accordingly.
+To preview the project on the web you can use Vercel by creating an project on [Vercel website](https://vercel.com/) and project mentioned in 1. step on [Supabase website](https://supabase.com/). After creating the project you will also need to add previously setup environment variables from `.env` in Vercel dashboard accordingly.
