@@ -3,7 +3,7 @@
 This is a template from which you can start create learning website. It is built with:
 - [Next.js](https://nextjs.org/) - framework to create websites,
 - [Supabase](https://supabase.com) - service to store user data and manage user-related features,
-- [Learn API](https://github.com/orzechdev/learn-api) - (experimental) API to allow fetching user learning state and manage user participation in courses.
+- [Learn API](https://github.com/learntray/learn-api) - (experimental) API to allow fetching user learning state and manage user participation in courses.
 
 ![Project preview](readme-image-1.png)
 
@@ -12,7 +12,7 @@ This is a template from which you can start create learning website. It is built
 Go to [learning-website.vercel.app](https://learning-website.vercel.app) to see example deployment:
 
 - on [/courses](https://learning-website.vercel.app/courses) you can see all available courses within the website,
-- on [/learnapi/items](https://learning-website.vercel.app/learnapi/items) and [/learnapi/state](https://learning-website.vercel.app/learnapi/state) you can see all data about available courses within the website and users learning state accordingly, prepared according to [Learn API](https://github.com/orzechdev/learn-api).
+- on [/learnapi/items](https://learning-website.vercel.app/learnapi/items) and [/learnapi/state](https://learning-website.vercel.app/learnapi/state) you can see all data about available courses within the website and users learning state accordingly, prepared according to [Learn API](https://github.com/learntray/learn-api).
 
 ## Getting Started
 
